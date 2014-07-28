@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C571B13D198638740035E5A8 /* UIImageView+AsyncDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = C571B13C198638740035E5A8 /* UIImageView+AsyncDownload.m */; };
+		C571B141198639C90035E5A8 /* MikuMikuDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C571B140198639C90035E5A8 /* MikuMikuDownloader.m */; };
+		C571B14419863A450035E5A8 /* MikuMikuError.m in Sources */ = {isa = PBXBuildFile; fileRef = C571B14319863A450035E5A8 /* MikuMikuError.m */; };
+		C571B14619863F240035E5A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C571B14519863F240035E5A8 /* Default-568h@2x.png */; };
+		C571B14A198648620035E5A8 /* SliderImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C571B149198648620035E5A8 /* SliderImage.m */; };
+		C571B14D19864CEE0035E5A8 /* SliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C571B14C19864CEE0035E5A8 /* SliderView.m */; };
 		E06A081215063DD800981F07 /* TSFriendsList.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A080D15063DD800981F07 /* TSFriendsList.m */; };
 		E06A081315063DD800981F07 /* TSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A080F15063DD800981F07 /* TSModel.m */; };
 		E06A081415063DD800981F07 /* TSModelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A081115063DD800981F07 /* TSModelParser.m */; };
@@ -36,6 +42,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C571B13B198638740035E5A8 /* UIImageView+AsyncDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AsyncDownload.h"; sourceTree = "<group>"; };
+		C571B13C198638740035E5A8 /* UIImageView+AsyncDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AsyncDownload.m"; sourceTree = "<group>"; };
+		C571B13F198639C90035E5A8 /* MikuMikuDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MikuMikuDownloader.h; path = Utilities/MikuMikuDownloader.h; sourceTree = "<group>"; };
+		C571B140198639C90035E5A8 /* MikuMikuDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MikuMikuDownloader.m; path = Utilities/MikuMikuDownloader.m; sourceTree = "<group>"; };
+		C571B14219863A450035E5A8 /* MikuMikuError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MikuMikuError.h; path = Utilities/MikuMikuError.h; sourceTree = "<group>"; };
+		C571B14319863A450035E5A8 /* MikuMikuError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MikuMikuError.m; path = Utilities/MikuMikuError.m; sourceTree = "<group>"; };
+		C571B14519863F240035E5A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C571B148198648620035E5A8 /* SliderImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderImage.h; sourceTree = "<group>"; };
+		C571B149198648620035E5A8 /* SliderImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderImage.m; sourceTree = "<group>"; };
+		C571B14B19864CEE0035E5A8 /* SliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SliderView.h; path = Slider/SliderView.h; sourceTree = "<group>"; };
+		C571B14C19864CEE0035E5A8 /* SliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SliderView.m; path = Slider/SliderView.m; sourceTree = "<group>"; };
 		E06A080C15063DD800981F07 /* TSFriendsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSFriendsList.h; sourceTree = "<group>"; };
 		E06A080D15063DD800981F07 /* TSFriendsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSFriendsList.m; sourceTree = "<group>"; };
 		E06A080E15063DD800981F07 /* TSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSModel.h; sourceTree = "<group>"; };
@@ -99,6 +116,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C571B13E198639BD0035E5A8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C571B14219863A450035E5A8 /* MikuMikuError.h */,
+				C571B14319863A450035E5A8 /* MikuMikuError.m */,
+				C571B13F198639C90035E5A8 /* MikuMikuDownloader.h */,
+				C571B140198639C90035E5A8 /* MikuMikuDownloader.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		C571B147198648260035E5A8 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				C571B148198648620035E5A8 /* SliderImage.h */,
+				C571B149198648620035E5A8 /* SliderImage.m */,
+				C571B14B19864CEE0035E5A8 /* SliderView.h */,
+				C571B14C19864CEE0035E5A8 /* SliderView.m */,
+			);
+			name = Slider;
+			sourceTree = "<group>";
+		};
 		E06A080B15063DD800981F07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +175,7 @@
 		E07C43271505BB3F006279FA = {
 			isa = PBXGroup;
 			children = (
+				C571B14519863F240035E5A8 /* Default-568h@2x.png */,
 				E095D68C151DF1DD00F385CA /* LICENSE */,
 				E07C43821506016D006279FA /* README.md */,
 				E07C43531505BB6C006279FA /* ExampleApp */,
@@ -168,6 +208,8 @@
 		E07C43531505BB6C006279FA /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				C571B147198648260035E5A8 /* Slider */,
+				C571B13E198639BD0035E5A8 /* Utilities */,
 				E07C43541505BB6C006279FA /* AppDelegate.h */,
 				E07C43551505BB6C006279FA /* AppDelegate.m */,
 				E07C43561505BB6C006279FA /* InfoPlist.strings */,
@@ -177,6 +219,8 @@
 				E07C435C1505BB6C006279FA /* TwitterStreams-Prefix.pch */,
 				E07C435D1505BB6C006279FA /* ViewController.h */,
 				E07C435E1505BB6C006279FA /* ViewController.m */,
+				C571B13B198638740035E5A8 /* UIImageView+AsyncDownload.h */,
+				C571B13C198638740035E5A8 /* UIImageView+AsyncDownload.m */,
 			);
 			path = ExampleApp;
 			sourceTree = "<group>";
@@ -276,6 +320,7 @@
 				E07C43611505BB6C006279FA /* InfoPlist.strings in Resources */,
 				E07C43621505BB6C006279FA /* ViewController.xib in Resources */,
 				E07C43831506016D006279FA /* README.md in Resources */,
+				C571B14619863F240035E5A8 /* Default-568h@2x.png in Resources */,
 				E095D68D151DF1DD00F385CA /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,14 +332,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C571B14419863A450035E5A8 /* MikuMikuError.m in Sources */,
+				C571B14D19864CEE0035E5A8 /* SliderView.m in Sources */,
 				E07C43601505BB6C006279FA /* AppDelegate.m in Sources */,
 				E07C43631505BB6C006279FA /* main.m in Sources */,
 				E07C43651505BB6C006279FA /* ViewController.m in Sources */,
+				C571B141198639C90035E5A8 /* MikuMikuDownloader.m in Sources */,
 				E07C436A1505BC12006279FA /* TSStream.m in Sources */,
 				E07C43761505BF2C006279FA /* JSONKit.m in Sources */,
 				E07C437A1505BFA9006279FA /* TSUserStream.m in Sources */,
 				E07C43811505DA4F006279FA /* TSFilterStream.m in Sources */,
 				E06A081215063DD800981F07 /* TSFriendsList.m in Sources */,
+				C571B14A198648620035E5A8 /* SliderImage.m in Sources */,
 				E06A081315063DD800981F07 /* TSModel.m in Sources */,
 				E06A081415063DD800981F07 /* TSModelParser.m in Sources */,
 				E06A08171506402A00981F07 /* TSTweet.m in Sources */,
@@ -304,6 +353,7 @@
 				E06A08231506FD3100981F07 /* TSUrl.m in Sources */,
 				E06A08261506FE7200981F07 /* TSHashtag.m in Sources */,
 				E06A082A150700F600981F07 /* NSArray+Enumerable.m in Sources */,
+				C571B13D198638740035E5A8 /* UIImageView+AsyncDownload.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +383,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Masatsugu Oomiya (GZGBR5893P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -348,7 +399,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				PROVISIONING_PROFILE = "007A0DF4-3B77-4EB6-AC6E-02EFD4AECBC5";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -357,7 +409,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Masatsugu Oomiya (GZGBR5893P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -365,8 +418,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "007A0DF4-3B77-4EB6-AC6E-02EFD4AECBC5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -375,6 +429,7 @@
 		E07C43511505BB3F006279FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Masatsugu Oomiya (GZGBR5893P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExampleApp/TwitterStreams-Prefix.pch";
 				INFOPLIST_FILE = "ExampleApp/TwitterStreams-Info.plist";
@@ -386,6 +441,7 @@
 		E07C43521505BB3F006279FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Masatsugu Oomiya (GZGBR5893P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExampleApp/TwitterStreams-Prefix.pch";
 				INFOPLIST_FILE = "ExampleApp/TwitterStreams-Info.plist";

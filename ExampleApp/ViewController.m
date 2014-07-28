@@ -17,8 +17,12 @@
 #import <Twitter/Twitter.h>
 
 #import "NSArray+Enumerable.h"
+#import "UIImageView+AsyncDownload.h"
+#import "SliderImage.h"
 
 @interface ViewController ()
+
+@property (nonatomic, assign) SliderView *sliderView;
 
 @property (nonatomic, retain) ACAccountStore* accountStore;
 @property (nonatomic, retain) NSArray* accounts;
@@ -30,14 +34,6 @@
 @end
 
 @implementation ViewController
-
-@synthesize tableView=_tableView;
-
-@synthesize tweets=_tweets;
-@synthesize accountStore=_accountStore;
-@synthesize accounts=_accounts;
-@synthesize account=_account;
-@synthesize stream=_stream;
 
 - (void)dealloc {
     self.accountStore = nil;
@@ -52,13 +48,21 @@
 {
     [super viewDidLoad];
     
+    SliderView *view = [[SliderView alloc] initWithFrame:self.view.frame];
+    view.autoresizingMask = UIViewAutoresizingFlexibleWidth
+    |UIViewAutoresizingFlexibleRightMargin
+    |UIViewAutoresizingFlexibleTopMargin
+    |UIViewAutoresizingFlexibleBottomMargin;
+    [self.view addSubview:view];
+    self.sliderView = view;
+    
     // Holds the tweet list
     self.tweets = [NSMutableArray array];
     
-    // Hide empty seperators
-    self.tableView.tableHeaderView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
-    self.tableView.tableFooterView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
-    
+//    // Hide empty seperators
+//    self.tableView.tableHeaderView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+//    self.tableView.tableFooterView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+//    
     // Get access to their accounts
     self.accountStore = [[[ACAccountStore alloc] init] autorelease];
     ACAccountType *accountTypeTwitter = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -123,44 +127,12 @@
         case 0: {
             if (buttonIndex < self.accounts.count) {
                 self.account = [self.accounts objectAtIndex:buttonIndex];
-                
-                // Stream options
-                UIActionSheet* sheet = [[[UIActionSheet alloc] initWithTitle:@"Select stream type:"
-                                                                    delegate:self 
-                                                           cancelButtonTitle:nil
-                                                      destructiveButtonTitle:nil
-                                                           otherButtonTitles:@"User stream", @"Filter stream", nil] autorelease];
-                sheet.tag = 1;
-                [sheet showInView:self.view];
+                self.stream = [[[TSFilterStream alloc] initWithAccount:self.account
+                                                           andDelegate:self
+                                                           andKeywords:[NSArray arrayWithObjects:@"#wf2014s", nil]] autorelease];
+                if (self.stream)
+                    [self.stream start];
             }
-        }
-            break; 
-            
-        case 1: {
-            self.stream = nil;
-            
-            // Create a stream of the selected types
-            switch (buttonIndex) {
-                case 0: {
-                    self.stream = [[[TSUserStream alloc] initWithAccount:self.account
-                                                             andDelegate:self
-                                                           andAllReplies:YES
-                                                        andAllFollowings:YES] autorelease];
-                }
-                    break;
-                    
-                case 1: {
-                    self.stream = [[[TSFilterStream alloc] initWithAccount:self.account
-                                                                     andDelegate:self
-                                                                     andKeywords:[NSArray arrayWithObjects:@"stuartkhall", @"discovr", nil]] autorelease];
-
-                }
-                    break;
-            }
-            
-            if (self.stream)
-                [self.stream start];
-
         }
             break;
     }
@@ -172,11 +144,12 @@
     [TSModelParser parseJson:json
                      friends:^(TSFriendsList *model) {
                          NSLog(@"Got friends list");
-                     } tweet:^(TSTweet *model) {
+                     } tweet:^(TSTweet *tweet) {
+//                         NSLog(@"%@", tweet.dictionary);
                          // Got a new tweet!
-                         [self.tweets insertObject:model atIndex:0];
-                         [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]]
-                                                                        withRowAnimation:UITableViewRowAnimationNone];
+                         if (tweet.mediaUrl) {
+                             [self.sliderView addQueue:[SliderImage imageWithTweet:tweet]];
+                         }
                      } deleteTweet:^(TSTweet *model) {
                          NSLog(@"Delete Tweet");
                      } follow:^(TSFollow *model) {

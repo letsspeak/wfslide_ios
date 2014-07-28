@@ -73,4 +73,16 @@
     return self.cachedHashtags;
 }
 
+- (NSArray*)mediaUrls {
+    return [[self.dictionary valueForKeyPath:@"entities.media"] map:^id(NSDictionary *d) {
+        return d[@"media_url"];
+    }];
+}
+
+- (NSString*)mediaUrl {
+    NSArray *urls = self.mediaUrls;
+    if (urls.count == 0) return nil;
+    return urls[0];
+}
+
 @end

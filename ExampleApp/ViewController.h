@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "TSUserStream.h"
+#import "SliderView.h"
 
 @interface ViewController : UIViewController<UIActionSheetDelegate, TSStreamDelegate>
-
-@property (nonatomic, assign) IBOutlet UITableView* tableView;
 
 @end

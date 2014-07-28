@@ -19,5 +19,7 @@
 - (NSArray*)userMentions;
 - (NSArray*)urls;
 - (NSArray*)hashtags;
+- (NSArray*)mediaUrls;
+- (NSString*)mediaUrl;
 
 @end
